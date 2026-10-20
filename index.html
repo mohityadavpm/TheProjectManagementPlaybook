@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBMHKQHSRX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZBMHKQHSRX');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Project Management Playbook — Mohit Yadav</title>
@@ -20,224 +11,194 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The Project Management Playbook">
 <meta name="twitter:description" content="27 LinkedIn polls. 5,059 responses. A lifecycle look at why projects stall.">
-<meta name="theme-color" content="#EDEFEC" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#182430" media="(prefers-color-scheme: dark)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#121A22">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%233DDBB0'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='bold' font-size='32' fill='%23101820' text-anchor='middle'%3EMY%3C/text%3E%3C/svg%3E">
 <style>
-  :root{
-    --bg:#EDEFEC; --surface:#FFFFFF; --ink:#16222C; --ink-dim:#51606B;
-    --brass:#A9762A; --teal:#2F5D50; --line:#D7D9D2;
-    --serif:'Fraunces',ui-serif,Georgia,serif;
-    --sans:'IBM Plex Sans',ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;
-    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-    color-scheme: light dark;
-    box-sizing:border-box;
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#182430; --surface:#263543; --ink:#F2EFE7; --ink-dim:#BCC6CE;
-      --brass:#E8B468; --teal:#80C8B4; --line:#3B4A5A;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#182430; --surface:#263543; --ink:#F2EFE7; --ink-dim:#BCC6CE;
-    --brass:#E8B468; --teal:#80C8B4; --line:#3B4A5A;
-  }
-  *{box-sizing:inherit}
-  html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);
-    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
-  }
-  body::before{
-    content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px);
-    background:var(--bg); z-index:10;
-  }
-  a{color:inherit}
-  .wrap{max-width:880px; margin:0 auto; padding:0 28px}
-  img,svg{max-width:100%}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--brass); outline-offset:3px}
+:root{
+  color-scheme:dark;
+  --accent:#3DDBB0;--accent-dim:rgba(61,219,176,.14);--accent-soft:rgba(61,219,176,.55);
+  --ink:#F4F7FA;--ink-2:#CCD5DE;--muted:#93A1B0;
+  --bg:#121A22;--bg-2:#19232D;--panel:#1E2A35;--panel-2:#26343F;
+  --line:rgba(255,255,255,.11);--line-strong:rgba(255,255,255,.19);
+  --shadow:0 24px 60px rgba(0,0,0,.5);
+  --r:3px;--nav-h:64px;
+  --font:'Segoe UI',system-ui,'Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.22,.7,.25,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{font-family:var(--font);background:#0B1118;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6;padding-bottom:env(safe-area-inset-bottom,0px)}
+::selection{background:var(--accent);color:#0B1118}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 34px}
+.num{font-variant-numeric:tabular-nums}
+.icon{width:20px;height:20px;display:block;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 
-  .icon{width:20px; height:20px; display:block; stroke:currentColor; fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round}
+/* AMBIENT (same as profile) */
+.bg{position:fixed;inset:0;z-index:-3;pointer-events:none;background:
+ radial-gradient(120% 90% at 10% 8%,rgba(40,120,140,.12),transparent 46%),
+ radial-gradient(120% 90% at 92% 96%,rgba(61,219,176,.07),transparent 50%),
+ linear-gradient(160deg,#111922 0%,#0D141B 46%,#090F15 100%)}
+.facets{position:fixed;inset:-10%;z-index:-2;pointer-events:none}
+.facets span{position:absolute;top:-20%;height:150%;transform:skewX(-24deg)}
+.f1{left:-8%;width:34%;background:linear-gradient(90deg,rgba(255,255,255,.028),transparent 80%)}
+.f2{left:22%;width:20%;background:linear-gradient(90deg,rgba(0,0,0,.22),transparent 85%)}
+.f3{left:48%;width:30%;background:linear-gradient(90deg,rgba(255,255,255,.022),transparent 80%)}
+.f4{left:82%;width:30%;background:linear-gradient(90deg,rgba(255,255,255,.03),transparent 78%)}
+.beam{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.beam i{position:absolute;top:-20%;height:140%;transform:skewX(-24deg);background:linear-gradient(180deg,rgba(61,219,176,.06),transparent 68%)}
+.beam .k1{left:14%;width:150px;animation:drift 30s ease-in-out infinite alternate}
+.beam .k2{left:60%;width:90px;opacity:.6;animation:drift 38s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:skewX(-24deg) translateX(-60px)}to{transform:skewX(-24deg) translateX(60px)}}
 
-  /* ---------- background grid texture ---------- */
-  .grid-bg{position:relative; overflow:hidden;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 56px 56px;
-    background-position: center top;
-  }
-  .grid-bg::before{
-    content:""; position:absolute; inset:0; pointer-events:none;
-    background:radial-gradient(ellipse 620px 360px at 88% -12%, rgba(169,118,42,.22), transparent 70%);
-  }
-  .grid-fade{position:relative}
-  .grid-fade::after{
-    content:""; position:absolute; inset:0; pointer-events:none;
-    background:linear-gradient(180deg, transparent 0%, var(--bg) 92%);
-  }
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:80;display:flex;align-items:center;gap:22px;padding:0 26px;background:rgba(18,26,34,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.brand-logo{flex:none;height:42px;width:42px;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,#7CF3D3,#2BB28F)}
+.brand-logo img{width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block}
+.brand-sep{width:1px;height:28px;background:var(--line-strong)}
+.brand-txt b{display:block;font-size:14px;font-weight:700}
+.brand-txt i{display:block;font-style:normal;font-size:11px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+.tabs{display:flex;gap:4px;margin-left:auto}
+.tab{position:relative;padding:9px 13px;font-size:13px;font-weight:600;color:var(--ink-2);letter-spacing:.06em;border-radius:var(--r);transition:.25s;white-space:nowrap;text-decoration:none}
+.tab:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+.tab.active{color:var(--ink)}
+.tab.active::after{content:'';position:absolute;left:13px;right:13px;bottom:2px;height:3px;background:var(--accent);transform:skewX(-22deg)}
 
-  /* ---------- hero ---------- */
-  header.hero{position:relative; z-index:1; padding:72px 0 40px; border-bottom:1px solid var(--line)}
-  .kicker{
-    font-family:var(--mono); font-size:13px; color:var(--teal);
-    letter-spacing:.02em; margin:0 0 18px;
-  }
-  h1.title{
-    font-family:var(--serif); font-weight:600; font-size:clamp(34px,5.4vw,54px);
-    line-height:1.08; margin:0 0 20px; max-width:14ch;
-  }
-  .dek{
-    font-size:19px; color:var(--ink-dim); max-width:56ch; margin:0 0 30px;
-  }
-  .tick-label{font-family:var(--mono); font-size:11.5px; color:var(--ink-dim); margin:0 0 10px}
-  .tickrow{display:flex; flex-wrap:wrap; gap:6px; max-width:400px; margin-bottom:34px}
-  .tick{width:7px; height:7px; border-radius:50%; background:var(--line)}
-  .tick.hl{background:var(--brass)}
-  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .tick{background:var(--line)} }
-  @media (prefers-reduced-motion: no-preference){
-    .tick{opacity:0; transform:scale(.3); animation:tickin .3s ease forwards; animation-delay:calc(var(--d, 0) * 16ms + .35s)}
-    @keyframes tickin{to{opacity:1; transform:scale(1)}}
-  }
-  .stat-row{display:flex; flex-wrap:wrap; gap:36px 48px; margin-top:8px}
-  .stat b{
-    display:block; font-family:var(--mono); font-weight:600;
-    font-size:clamp(28px,4vw,38px); color:var(--brass); line-height:1;
-  }
-  .stat span{display:block; margin-top:8px; font-size:13.5px; color:var(--ink-dim)}
+/* TYPE */
+.eyebrow{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:14px}
+.eyebrow .tick-mark{display:inline-block;width:14px;height:9px;background:var(--accent);transform:skewX(-22deg);margin-right:10px;vertical-align:1px}
+h2{font-size:clamp(28px,3.8vw,44px);font-weight:250;letter-spacing:-.015em;line-height:1.1;margin-bottom:16px;max-width:22ch}
+h2 b{font-weight:750}
+.lead{font-size:16px;color:var(--ink-2);max-width:68ch;line-height:1.7;margin-bottom:14px}
+.note{border-left:2px solid var(--accent);padding:6px 0 6px 18px;margin-top:22px;color:var(--muted);font-size:14px;line-height:1.65;max-width:70ch}
+.panel{background:linear-gradient(180deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:var(--r);box-shadow:inset 0 1px 0 rgba(255,255,255,.045)}
 
-  /* ---------- sections ---------- */
-  section{padding:56px 0}
-  section + section{border-top:1px solid var(--line)}
-  .eyebrow{
-    font-family:var(--mono); font-size:13px; color:var(--ink-dim); margin:0 0 10px;
-  }
-  h2{
-    font-family:var(--serif); font-weight:500; font-size:clamp(24px,3.4vw,30px);
-    margin:0 0 18px;
-  }
-  p.lead{font-size:17px; color:var(--ink-dim); max-width:62ch; margin:0 0 14px}
-  .note{
-    border-left:2px solid var(--teal); padding:4px 0 4px 18px; margin-top:22px;
-    color:var(--ink-dim); font-size:14.5px; max-width:58ch;
-  }
+/* HERO */
+.hero{padding:calc(var(--nav-h) + 78px) 0 54px;border-bottom:1px solid var(--line)}
+.hero .eyebrow{animation:rise .7s var(--ease) both}
+h1{font-size:clamp(40px,6.2vw,80px);font-weight:300;letter-spacing:-.02em;line-height:1.04;max-width:15ch;margin-bottom:20px;animation:rise .7s .1s var(--ease) both}
+h1 b{font-weight:750}
+.dek{font-size:clamp(16px,1.7vw,19px);color:var(--ink-2);font-weight:300;max-width:62ch;line-height:1.65;margin-bottom:30px;animation:rise .7s .2s var(--ease) both}
+.tick-label{font-size:11.5px;color:var(--muted);letter-spacing:.06em;margin-bottom:12px}
+.tickrow{display:flex;flex-wrap:wrap;gap:8px;max-width:480px;margin-bottom:34px}
+.tick{width:9px;height:9px;background:rgba(255,255,255,.16);transform:skewX(-22deg)}
+.tick.hl{background:var(--accent)}
+.js .tick{opacity:0;animation:tickin .3s ease forwards;animation-delay:calc(var(--d,0)*18ms + .4s)}
+@keyframes tickin{to{opacity:1}}
+.stat-row{display:flex;gap:30px;flex-wrap:wrap;margin-bottom:34px}
+.stat{display:flex;align-items:baseline;gap:10px}
+.stat+.stat{border-left:1px solid var(--line);padding-left:30px}
+.stat b{font-size:clamp(28px,3.4vw,38px);font-weight:800;color:var(--accent);line-height:1}
+.stat span{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:var(--r);background:var(--accent);color:#0B1118;font-size:12.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;border:1px solid var(--accent);transition:transform .3s var(--ease),background .3s}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-  /* ---------- progress rings ---------- */
-  .ringstat{position:relative; width:64px; height:64px; flex:none}
-  .ringstat.small{width:46px; height:46px}
-  .ring{width:100%; height:100%; transform:rotate(-90deg); display:block}
-  .ring-bg{fill:none; stroke:var(--line); stroke-width:2.6}
-  .ring-fg{fill:none; stroke:var(--brass); stroke-width:2.6; stroke-linecap:round; stroke-dasharray:0 100}
-  .ring-value{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    font-family:var(--mono); font-weight:600; font-size:14px; color:var(--brass);
-  }
-  .ringstat.small .ring-value{font-size:11px}
-  .ringstat.small .ring-fg{stroke:var(--teal)}
+/* SECTIONS */
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
 
-  /* ---------- seven signals ---------- */
-  .signals{display:grid; gap:0}
-  .signal{
-    display:grid; grid-template-columns:64px 1fr; gap:22px; align-items:start;
-    padding:26px 0; border-top:1px solid var(--line);
-  }
-  .signal:first-child{border-top:none}
-  .signal .numcol{display:flex; flex-direction:column; align-items:center; gap:8px}
-  .signal .numcol .idx{font-family:var(--mono); font-size:11px; color:var(--ink-dim)}
-  .signal .numcol .icon{width:15px; height:15px; color:var(--teal)}
-  .signal h3{
-    font-family:var(--sans); font-weight:600; font-size:17px; margin:0 0 6px;
-  }
-  .signal .fig{
-    font-family:var(--mono); color:var(--brass); font-weight:600; margin-right:8px;
-  }
-  .signal p{margin:0; color:var(--ink-dim); font-size:15px; max-width:60ch}
+/* RINGS */
+.ringstat{position:relative;width:68px;height:68px;flex:none}
+.ringstat.small{width:52px;height:52px}
+.ring{width:100%;height:100%;transform:rotate(-90deg);display:block}
+.ring-bg{fill:none;stroke:rgba(255,255,255,.12);stroke-width:2.6}
+.ring-fg{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:0 100}
+.ring-value{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--accent)}
+.ringstat.small .ring-value{font-size:12px}
 
-  /* ---------- lifecycle ---------- */
-  .lifecycle{
-    display:grid; grid-template-columns:repeat(5,1fr); gap:1px;
-    background:var(--line); border:1px solid var(--line); margin-top:8px;
-  }
-  .phase{background:var(--surface); padding:20px 16px 22px}
-  .phase .icon{color:var(--brass); margin-bottom:10px}
-  .phase .pn{font-family:var(--mono); font-size:12px; color:var(--ink-dim); margin-bottom:12px}
-  .phase .ptitle{font-weight:600; font-size:13.5px; margin:12px 0 6px}
-  .phase .pnote{font-size:12.5px; color:var(--ink-dim); line-height:1.5}
-  @media (max-width:720px){
-    .lifecycle{grid-template-columns:1fr}
-  }
+/* SIGNALS */
+.signals{display:grid;gap:14px;margin-top:26px}
+.signal{display:grid;grid-template-columns:84px 1fr;gap:22px;align-items:start;padding:22px 26px 22px 22px;transition:transform .35s var(--ease),border-color .3s}
+.signal:hover{transform:translateY(-3px);border-color:var(--accent-soft)}
+.numcol{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:2px}
+.numcol .icon{width:16px;height:16px;color:var(--muted)}
+.signal h3{font-size:17px;font-weight:700;margin-bottom:6px;line-height:1.35}
+.signal p{color:var(--ink-2);font-size:14.5px;max-width:68ch;line-height:1.65}
+.ev{display:block;margin-top:12px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
 
-  /* ---------- implications / delivery models ---------- */
-  .roles{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:8px}
-  .role{padding-top:18px; border-top:2px solid var(--brass)}
-  .role h3{font-size:15.5px; margin:0 0 10px; font-weight:600}
-  .role p{font-size:14.5px; color:var(--ink-dim); margin:0}
-  @media (max-width:720px){ .roles{grid-template-columns:1fr; gap:30px} }
+/* CROWD */
+.stat-band{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:26px}
+.cstat{background:var(--panel-2);padding:24px 22px}
+.cstat b{display:block;font-size:clamp(34px,4vw,48px);font-weight:800;color:var(--accent);line-height:1}
+.cstat span{display:block;margin-top:12px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;line-height:1.6}
 
-  /* ---------- evidence, crowd, leader moves ---------- */
-  .ev{display:block; margin-top:10px; font-family:var(--mono); font-size:11.5px; color:var(--ink-dim)}
-  .crowd{display:flex; flex-wrap:wrap; gap:28px 56px; margin:24px 0 4px}
-  .cstat b{display:block; font-family:var(--mono); font-weight:600; font-size:34px; color:var(--brass); line-height:1}
-  .cstat span{display:block; margin-top:8px; font-size:13.5px; color:var(--ink-dim); line-height:1.5}
-  .moves{display:grid; margin-top:8px}
-  .move{display:grid; grid-template-columns:44px 1fr; gap:16px; padding:20px 0; border-top:1px solid var(--line)}
-  .move:first-child{border-top:none}
-  .move .mn{font-family:var(--mono); font-size:13px; color:var(--teal); padding-top:3px}
-  .move h3{font-size:16.5px; margin:0 0 4px; font-weight:600}
-  .move p{margin:0; font-size:14.5px; color:var(--ink-dim); max-width:62ch}
-  .move p b{color:var(--ink); font-weight:600}
-  .role .days{font-family:var(--mono); font-size:12px; color:var(--teal); margin-bottom:4px}
-  .plan{margin:0; padding-left:18px; font-size:14px; color:var(--ink-dim)}
-  .plan li{margin-bottom:6px}
+/* LIFECYCLE */
+.lifecycle{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:26px}
+.phase{background:var(--panel-2);padding:22px 18px 24px;position:relative;transition:background .3s;display:flex;flex-direction:column;gap:10px}
+.phase:hover{background:#31424F}
+.phase .icon{color:var(--accent)}
+.pn{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.ptitle{font-weight:700;font-size:15px;margin-top:4px}
+.pnote{font-size:13px;color:var(--ink-2);line-height:1.55}
 
-  /* ---------- access / cta ---------- */
-  .access{
-    background:var(--surface); border:1px solid var(--line); padding:32px;
-    display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px;
-  }
-  .access p{margin:0; max-width:46ch; color:var(--ink-dim); font-size:15px}
-  .btn{
-    font-family:var(--sans); font-weight:600; font-size:14.5px;
-    background:var(--brass); color:#1A1308; border:none; padding:13px 24px;
-    text-decoration:none; display:inline-block; cursor:pointer;
-    transition:opacity .15s ease;
-  }
-  .btn:hover{opacity:.85}
-  .btn.ghost{
-    background:transparent; color:var(--ink); border:1px solid var(--line);
-    margin-left:10px;
-  }
+/* COLUMNS */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.role{padding:22px;border-top:3px solid var(--accent);transition:transform .35s var(--ease)}
+.role:hover{transform:translateY(-4px)}
+.role h3{font-size:17px;font-weight:700;margin-bottom:10px}
+.role p{font-size:14px;color:var(--ink-2);line-height:1.65}
+.fig{font-weight:800;color:var(--accent);margin-right:6px}
+.days{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:8px}
+.plan{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:6px}
+.plan li{display:flex;gap:12px;font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.plan li::before{content:'';flex:none;width:8px;height:8px;background:var(--accent);transform:rotate(45deg);margin-top:6px}
 
-  /* ---------- footer ---------- */
-  footer{padding:44px 0 56px}
-  .cite{
-    font-family:var(--mono); font-size:13px; color:var(--ink-dim);
-    background:var(--surface); border:1px solid var(--line); padding:18px 20px;
-    line-height:1.7; margin-bottom:28px;
-  }
-  .byline{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; font-size:13.5px; color:var(--ink-dim)}
-  .byline strong{color:var(--ink)}
+/* MOVES */
+.moves{display:grid;gap:14px;margin-top:26px}
+.move{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 24px 20px 20px;transition:transform .35s var(--ease),border-color .3s}
+.move:hover{transform:translateX(5px);border-color:var(--accent-soft)}
+.mn{font-size:30px;font-weight:800;color:transparent;-webkit-text-stroke:1px var(--accent-soft);line-height:1;padding-top:2px}
+.move h3{font-size:17px;font-weight:700;margin-bottom:5px}
+.move p{font-size:14.5px;color:var(--ink-2);line-height:1.65;max-width:70ch}
+.move p b{color:var(--accent);font-weight:700}
 
-  @media (prefers-reduced-motion: no-preference){
-    header.hero{animation:rise .6s ease both}
-    @keyframes rise{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
-  }
+/* ACCESS */
+.access{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:22px;padding:32px;border-left:3px solid var(--accent)}
+.access p{max-width:52ch;color:var(--ink-2);font-size:15px;line-height:1.65}
 
-  @media print{
-    body{background:#fff; color:#111}
-    .grid-bg, .grid-bg::before, .grid-fade::after{display:none}
-    .btn, .btn.ghost{border:1px solid #111; color:#111; background:#fff}
-    a[href]:after{content:" (" attr(href) ")"; font-size:11px}
-    .access a[href="#"]:after{content:""}
-  }
+/* FOOTER */
+footer{padding:20px 0 64px;border-top:1px solid var(--line)}
+.cite{font-size:13px;color:var(--ink-2);line-height:1.75;padding:20px 22px;margin:34px 0 26px}
+.byline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--muted);line-height:1.7}
+.byline strong{color:var(--ink)}
+.byline a{color:var(--accent)}
+
+@media (max-width:1080px){
+  .tabs{display:none}
+  .lifecycle{grid-template-columns:1fr 1fr}
+  .roles{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .nav{padding:0 16px}.brand-sep,.brand-txt i{display:none}
+  .signal{grid-template-columns:1fr;gap:14px}.numcol{flex-direction:row;justify-content:flex-start}
+  .stat+.stat{border-left:none;padding-left:0}
+  .stat-band,.lifecycle{grid-template-columns:1fr}
+  .move{grid-template-columns:44px 1fr}.mn{font-size:24px}
+  .access{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}.beam{display:none}html{scroll-behavior:auto}}
+@media print{
+  body{background:#fff;color:#111}.bg,.facets,.beam,.nav{display:none}
+  .panel,.cstat,.phase{background:#fff!important;border-color:#ccc!important;box-shadow:none}
+  *{color:#111!important}.ring-fg{stroke:#111}.js .rv{opacity:1!important;transform:none!important}
+  a[href]:after{content:" (" attr(href) ")";font-size:11px}
+}
 </style>
 </head>
 <body>
+<div class="bg" aria-hidden="true"></div>
+<div class="facets" aria-hidden="true"><span class="f1"></span><span class="f2"></span><span class="f3"></span><span class="f4"></span></div>
+<div class="beam" aria-hidden="true"><i class="k1"></i><i class="k2"></i></div>
 
 <svg style="display:none" aria-hidden="true">
   <symbol id="icon-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></symbol>
@@ -251,110 +212,109 @@
   <symbol id="icon-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01" stroke-width="2.4"/></symbol>
 </svg>
 
-<div class="grid-bg grid-fade">
-  <header class="hero">
-    <div class="wrap">
-      <p class="kicker">Independent practitioner research — 2026</p>
-      <h1 class="title">The Project Management Playbook</h1>
-      <p class="dek">Twenty-seven structured LinkedIn polls from a 30-part series, 5,059 practitioner responses, and a lifecycle-level look at why projects stall — from objective-setting at initiation through ownership at closure.</p>
-      <p class="tick-label">One mark per poll, in post order. Gold: top answer at 70% or more.</p>
-      <div class="tickrow" id="tickrow" aria-hidden="true"></div>
-      <div class="stat-row">
-        <div class="stat"><b data-target="5059" data-comma="1">0</b><span>poll responses analysed</span></div>
-        <div class="stat"><b data-target="27">0</b><span>structured LinkedIn polls</span></div>
-        <div class="stat"><b data-target="7">0</b><span>recurring themes</span></div>
-      </div>
-    </div>
-  </header>
-</div>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Back to top">
+    <span class="brand-logo"><img src="data:image/webp;base64,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" alt="Mohit Yadav"></span><span class="brand-sep"></span>
+    <span class="brand-txt"><b>Mohit Yadav</b><i>Practitioner Research · 2026</i></span>
+  </a>
+  <nav class="tabs" aria-label="Sections">
+    <a class="tab" href="#signals">Signals</a>
+    <a class="tab" href="#lifecycle">Lifecycle</a>
+    <a class="tab" href="#brief">Leader brief</a>
+    <a class="tab" href="#plan">90-day plan</a>
+    <a class="tab" href="#report">Full report</a>
+  </nav>
+  <div class="progress" id="progress"></div>
+</header>
 
-<section>
+<main id="top">
+<header class="hero">
   <div class="wrap">
-    <p class="eyebrow">What this is</p>
-    <h2>A practitioner signal, not a population estimate</h2>
+    <p class="eyebrow"><span class="tick-mark"></span>Independent practitioner research — 2026</p>
+    <h1>The Project Management <b>Playbook</b></h1>
+    <p class="dek">Twenty-seven structured LinkedIn polls from a 30-part series, 5,059 practitioner responses, and a lifecycle-level look at why projects stall — from objective-setting at initiation through ownership at closure.</p>
+    <p class="tick-label">One mark per poll, in post order. Highlighted: top answer at 70% or more.</p>
+    <div class="tickrow" id="tickrow" aria-hidden="true"></div>
+    <div class="stat-row">
+      <div class="stat"><b class="num" data-target="5059" data-comma="1">0</b><span>poll responses analysed</span></div>
+      <div class="stat"><b class="num" data-target="27">0</b><span>structured LinkedIn polls</span></div>
+      <div class="stat"><b class="num" data-target="7">0</b><span>recurring themes</span></div>
+    </div>
+    <div class="btns">
+      <a class="btn" href="https://mohityadavpm.github.io/TheProjectManagementPlaybook/Pm%20Playbook.pdf" target="_blank" rel="noopener">Full report (PDF) <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="btn ghost" href="https://docs.google.com/spreadsheets/d/1yBJ25uhN4IXc3x5bKwcxThSDrEbF1P3w" target="_blank" rel="noopener">Poll workbook <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<section id="what">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="tick-mark"></span>What this is</p>
+    <h2>A practitioner signal, <b>not a population estimate</b></h2>
     <p class="lead">This research set out to test a simple question: do projects fail from a lack of frameworks, or from a gap between knowing the discipline and applying it consistently? Twenty-seven polls from a 30-part LinkedIn series, run over a year, gathered practitioner views across initiation, planning, execution, monitoring, and closure.</p>
     <p class="lead">The recurring pattern across all 27 polls: practitioners are less often missing a tool or technique, and more often missing consistent follow-through on objective clarity, ownership, and closure.</p>
     <div class="note">Findings are self-reported, platform-based, and directional — not a statistically representative or causal sample. Poll sizes range from 20 to 505 votes, and 10 of the 27 had fewer than 100. Only each poll’s top answer share was recorded, so percentages are never pooled. Full methodology and limitations are in the report.</div>
   </div>
 </section>
 
-<section>
+<section id="signals">
   <div class="wrap">
-    <p class="eyebrow">Seven practitioner signals</p>
-    <h2>Where projects consistently lose ground</h2>
+    <div class="rv">
+      <p class="eyebrow"><span class="tick-mark"></span>Seven practitioner signals</p>
+      <h2>Where projects consistently <b>lose ground</b></h2>
+    </div>
     <div class="signals">
-      <div class="signal">
+      <div class="signal panel rv">
         <div class="numcol">
-          <div class="ringstat" data-target="79" data-suffix="%">
-            <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg>
-            <span class="ring-value">0%</span>
-          </div>
+          <div class="ringstat" data-target="79" data-suffix="%"><svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg><span class="ring-value">0%</span></div>
           <svg class="icon"><use href="#icon-target"/></svg>
         </div>
         <div><h3>Objective definition is a critical early-stage priority</h3>
         <p>Chosen as the single most important first step in planning — ahead of timelines, stakeholder engagement, or risk analysis.</p><span class="ev">Poll #18 · n=239</span></div>
       </div>
-      <div class="signal">
+      <div class="signal panel rv">
         <div class="numcol">
-          <div class="ringstat" data-target="34" data-suffix="%">
-            <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg>
-            <span class="ring-value">0%</span>
-          </div>
+          <div class="ringstat" data-target="34" data-suffix="%"><svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg><span class="ring-value">0%</span></div>
           <svg class="icon"><use href="#icon-flag"/></svg>
         </div>
         <div><h3>Stakeholder disengagement is the most commonly cited closure barrier</h3>
         <p>Stakeholder disengagement was the top-cited barrier to effective closure; a separate poll found 35% point to a lack of ownership as the main barrier to continuous improvement.</p><span class="ev">Poll #30 · n=466 · ownership: Poll #29 · n=220</span></div>
       </div>
-      <div class="signal">
+      <div class="signal panel rv">
         <div class="numcol">
-          <div class="ringstat" data-target="61" data-suffix="%">
-            <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg>
-            <span class="ring-value">0%</span>
-          </div>
+          <div class="ringstat" data-target="61" data-suffix="%"><svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg><span class="ring-value">0%</span></div>
           <svg class="icon"><use href="#icon-sliders"/></svg>
         </div>
         <div><h3>Tool adoption is high, but it doesn’t guarantee outcomes</h3>
         <p>Strong reliance on tracking tools and version control, but adoption alone doesn’t establish stronger governance or results.</p><span class="ev">Poll #24 · n=505</span></div>
       </div>
-      <div class="signal">
+      <div class="signal panel rv">
         <div class="numcol">
-          <div class="ringstat" data-target="76" data-suffix="%">
-            <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg>
-            <span class="ring-value">0%</span>
-          </div>
+          <div class="ringstat" data-target="76" data-suffix="%"><svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg><span class="ring-value">0%</span></div>
           <svg class="icon"><use href="#icon-shield"/></svg>
         </div>
         <div><h3>Governance practices emphasise role clarity and formal structure</h3>
         <p>RACI was the preferred mechanism for defining responsibility; 41% favour a formal charter as the most effective governance practice.</p><span class="ev">RACI: Poll #11 · n=409 · charter: Poll #28 · n=408</span></div>
       </div>
-      <div class="signal">
+      <div class="signal panel rv">
         <div class="numcol">
-          <div class="ringstat" data-target="57" data-suffix="%">
-            <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg>
-            <span class="ring-value">0%</span>
-          </div>
+          <div class="ringstat" data-target="57" data-suffix="%"><svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg><span class="ring-value">0%</span></div>
           <svg class="icon"><use href="#icon-battery"/></svg>
         </div>
         <div><h3>Resource challenges reflect both availability and workload distribution</h3>
         <p>Limited availability led one poll, and uneven workload distribution (43%) led another: two distinct dimensions of capacity.</p><span class="ev">Poll #4 · n=63, small sample · workload: Poll #25 · n=136</span></div>
       </div>
-      <div class="signal">
+      <div class="signal panel rv">
         <div class="numcol">
-          <div class="ringstat" data-target="69" data-suffix="%">
-            <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg>
-            <span class="ring-value">0%</span>
-          </div>
+          <div class="ringstat" data-target="69" data-suffix="%"><svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg><span class="ring-value">0%</span></div>
           <svg class="icon"><use href="#icon-scale"/></svg>
         </div>
         <div><h3>Risk and cost management show stronger adoption of structured techniques</h3>
         <p>Earned Value Management led budget comparison, and 64% see stakeholder engagement as the most effective way to reduce resistance to change.</p><span class="ev">EVM: Poll #9 · n=130 · change: Poll #10 · n=150</span></div>
       </div>
-      <div class="signal">
+      <div class="signal panel rv">
         <div class="numcol">
-          <div class="ringstat" data-target="51" data-suffix="%">
-            <svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg>
-            <span class="ring-value">0%</span>
-          </div>
+          <div class="ringstat" data-target="51" data-suffix="%"><svg class="ring" viewBox="0 0 36 36" aria-hidden="true"><circle class="ring-bg" cx="18" cy="18" r="15.9155"/><circle class="ring-fg" cx="18" cy="18" r="15.9155"/></svg><span class="ring-value">0%</span></div>
           <svg class="icon"><use href="#icon-refresh"/></svg>
         </div>
         <div><h3>Agile and structured controls coexist in practice</h3>
@@ -364,24 +324,24 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">How decisive was the crowd?</p>
-    <h2>Most polls ended in a majority, not a landslide</h2>
+<section id="crowd">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="tick-mark"></span>How decisive was the crowd?</p>
+    <h2>Most polls ended in a <b>majority, not a landslide</b></h2>
     <p class="lead">Ten of the 27 polls had a textbook-correct answer, and in nine of those ten the crowd’s top pick matched it. The exception was Poll #7: the top answer for focused work intervals was Agile practices (44%), where the textbook technique is Pomodoro.</p>
-    <div class="crowd">
-      <div class="cstat"><b data-target="5">0</b><span>clear consensus<br>top answer 70% or more</span></div>
-      <div class="cstat"><b data-target="11">0</b><span>majority<br>top answer 50–69%</span></div>
-      <div class="cstat"><b data-target="11">0</b><span>divided field<br>top answer under 50%</span></div>
+    <div class="stat-band">
+      <div class="cstat"><b class="num" data-target="5">0</b><span>clear consensus<br>top answer 70% or more</span></div>
+      <div class="cstat"><b class="num" data-target="11">0</b><span>majority<br>top answer 50–69%</span></div>
+      <div class="cstat"><b class="num" data-target="11">0</b><span>divided field<br>top answer under 50%</span></div>
     </div>
     <div class="note">Knowledge polls cluster at the decisive end; the most divided polls are opinion questions about barriers and challenges.</div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Across the lifecycle</p>
-    <h2>Clarity → structure → capacity → visibility → ownership</h2>
+<section id="lifecycle">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="tick-mark"></span>Across the lifecycle</p>
+    <h2>Clarity → structure → capacity → visibility → <b>ownership</b></h2>
     <p class="lead">Challenges rarely start where they’re noticed. The research traces how early gaps in objective-setting compound through planning and execution, and surface most visibly at closure.</p>
     <div class="lifecycle">
       <div class="phase">
@@ -423,21 +383,21 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">Delivery models in practice</p>
-    <h2>Waterfall, Agile, and the hybrid middle ground</h2>
+<section id="models">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="tick-mark"></span>Delivery models in practice</p>
+    <h2>Waterfall, Agile, and the <b>hybrid middle ground</b></h2>
     <p class="lead">The poll set doesn’t directly measure which model respondents use — but related findings show where structure and adaptability each show up in practice.</p>
     <div class="roles">
-      <div class="role">
+      <div class="role panel">
         <h3>Waterfall &amp; predictive</h3>
         <p><span class="fig">76%</span>favour RACI, <span class="fig">41%</span>a formal charter, <span class="fig">69%</span>EVM for budget tracking — strong reliance on upfront structure and control.</p>
       </div>
-      <div class="role">
+      <div class="role panel">
         <h3>Agile &amp; adaptive</h3>
         <p><span class="fig">51%</span>pick Agile as the framework for continuous improvement, and <span class="fig">64%</span>see stakeholder engagement as the top lever against resistance to change.</p>
       </div>
-      <div class="role">
+      <div class="role panel">
         <h3>Hybrid</h3>
         <p>Governance habits and Agile habits coexist in the same respondents. The data doesn’t show hybrid outperforming — only that it should be designed deliberately, not assumed.</p>
       </div>
@@ -446,49 +406,51 @@
   </div>
 </section>
 
-<section>
+<section id="brief">
   <div class="wrap">
-    <p class="eyebrow">Leader brief</p>
-    <h2>Five takeaways for leaders</h2>
-    <p class="lead">Short on time? These are the five moves the poll evidence suggests leaders act on first.</p>
+    <div class="rv">
+      <p class="eyebrow"><span class="tick-mark"></span>Leader brief</p>
+      <h2>Five takeaways <b>for leaders</b></h2>
+      <p class="lead">Short on time? These are the five moves the poll evidence suggests leaders act on first.</p>
+    </div>
     <div class="moves">
-      <div class="move"><div class="mn">01</div><div><h3>Start with clarity, not activity</h3><p>79% name defining objectives as the first planning step (Poll #18). <b>Leader move:</b> do not approve a project without clear, measurable objectives.</p></div></div>
-      <div class="move"><div class="mn">02</div><div><h3>Value is often lost at closure</h3><p>Stakeholder disengagement is the most commonly cited closure barrier at 34% (Poll #30). <b>Leader move:</b> plan handover, adoption and ownership from day one, not at the end.</p></div></div>
-      <div class="move"><div class="mn">03</div><div><h3>Ownership drives improvement</h3><p>Lack of ownership is the top barrier to continuous improvement at 35% (Poll #29). <b>Leader move:</b> name an accountable owner for every outcome and every lesson learned.</p></div></div>
-      <div class="move"><div class="mn">04</div><div><h3>Tools do not replace discipline</h3><p>61% track progress with PM tools (Poll #24), yet core challenges persist. <b>Leader move:</b> track adoption and outcomes, not just milestones and dashboards.</p></div></div>
-      <div class="move"><div class="mn">05</div><div><h3>Capacity is the hidden constraint</h3><p>Uneven workload distribution leads resource challenges at 43% (Poll #25). <b>Leader move:</b> review workload balance before adding scope or new projects.</p></div></div>
+      <div class="move panel rv"><div class="mn">01</div><div><h3>Start with clarity, not activity</h3><p>79% name defining objectives as the first planning step (Poll #18). <b>Leader move:</b> do not approve a project without clear, measurable objectives.</p></div></div>
+      <div class="move panel rv"><div class="mn">02</div><div><h3>Value is often lost at closure</h3><p>Stakeholder disengagement is the most commonly cited closure barrier at 34% (Poll #30). <b>Leader move:</b> plan handover, adoption and ownership from day one, not at the end.</p></div></div>
+      <div class="move panel rv"><div class="mn">03</div><div><h3>Ownership drives improvement</h3><p>Lack of ownership is the top barrier to continuous improvement at 35% (Poll #29). <b>Leader move:</b> name an accountable owner for every outcome and every lesson learned.</p></div></div>
+      <div class="move panel rv"><div class="mn">04</div><div><h3>Tools do not replace discipline</h3><p>61% track progress with PM tools (Poll #24), yet core challenges persist. <b>Leader move:</b> track adoption and outcomes, not just milestones and dashboards.</p></div></div>
+      <div class="move panel rv"><div class="mn">05</div><div><h3>Capacity is the hidden constraint</h3><p>Uneven workload distribution leads resource challenges at 43% (Poll #25). <b>Leader move:</b> review workload balance before adding scope or new projects.</p></div></div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">From insight to action</p>
-    <h2>A 90-day leader plan</h2>
+<section id="plan">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="tick-mark"></span>From insight to action</p>
+    <h2>A <b>90-day</b> leader plan</h2>
     <p class="lead">Each action traces back to a poll result or pitfall in the report. No new statistics are introduced.</p>
     <div class="roles">
-      <div class="role"><div class="days">Days 1–30</div><h3>Diagnose &amp; clarify</h3><ul class="plan"><li>Confirm every live project has written, agreed objectives</li><li>Map stakeholders and test their commitment</li><li>Review team availability and workload spread</li><li>Check every risk has a named owner</li></ul></div>
-      <div class="role"><div class="days">Days 31–60</div><h3>Assign ownership &amp; embed governance</h3><ul class="plan"><li>Require a signed charter and a RACI</li><li>Set priorities with MoSCoW and record trade-offs</li><li>Rebalance workload and share a current view of capacity</li><li>Engage stakeholders to reduce resistance to change</li></ul></div>
-      <div class="role"><div class="days">Days 61–90</div><h3>Close the loop &amp; improve</h3><ul class="plan"><li>Track progress in tools, but review decisions and outcomes</li><li>Name an owner for improvement and adoption after handover</li><li>Make closure a governance step: acceptance, knowledge transfer, lessons learned</li><li>Measure adoption and value alongside time, cost, and scope</li></ul></div>
+      <div class="role panel"><div class="days">Days 1–30</div><h3>Diagnose &amp; clarify</h3><ul class="plan"><li>Confirm every live project has written, agreed objectives</li><li>Map stakeholders and test their commitment</li><li>Review team availability and workload spread</li><li>Check every risk has a named owner</li></ul></div>
+      <div class="role panel"><div class="days">Days 31–60</div><h3>Assign ownership &amp; embed governance</h3><ul class="plan"><li>Require a signed charter and a RACI</li><li>Set priorities with MoSCoW and record trade-offs</li><li>Rebalance workload and share a current view of capacity</li><li>Engage stakeholders to reduce resistance to change</li></ul></div>
+      <div class="role panel"><div class="days">Days 61–90</div><h3>Close the loop &amp; improve</h3><ul class="plan"><li>Track progress in tools, but review decisions and outcomes</li><li>Name an owner for improvement and adoption after handover</li><li>Make closure a governance step: acceptance, knowledge transfer, lessons learned</li><li>Measure adoption and value alongside time, cost, and scope</li></ul></div>
     </div>
     <div class="note">By day 90, every project should have clear objectives, named owners, visible capacity, and a closure path that hands over to sustained ownership. The full report adds a 15-question leader checklist with scoring.</div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <p class="eyebrow">What it means for each role</p>
-    <h2>Three audiences, three sets of actions</h2>
+<section id="roles">
+  <div class="wrap rv">
+    <p class="eyebrow"><span class="tick-mark"></span>What it means for each role</p>
+    <h2>Three audiences, <b>three sets of actions</b></h2>
     <div class="roles">
-      <div class="role">
+      <div class="role panel">
         <h3>PMOs &amp; governance</h3>
         <p>Treat objective definition and closure as governance gates, not paperwork — and shift portfolio oversight toward outcome realisation, not just activity tracking.</p>
       </div>
-      <div class="role">
+      <div class="role panel">
         <h3>Project managers</h3>
         <p>Anchor planning in clearly stated objectives, manage stakeholder engagement proactively, and use tools to support decisions rather than replace judgment.</p>
       </div>
-      <div class="role">
+      <div class="role panel">
         <h3>Business leaders</h3>
         <p>Define success beyond time and cost, fund change management explicitly, and assign clear post-delivery ownership so value is actually realised.</p>
       </div>
@@ -496,21 +458,22 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="access">
+<section id="report">
+  <div class="wrap rv">
+    <div class="access panel">
       <p>The full 37-page report covers methodology, lifecycle analysis, delivery-model findings, a leader checklist, and the complete poll-level dataset.</p>
-      <div>
-        <a class="btn" href="./Pm%20Playbook.pdf" target="_blank" rel="noopener">Full report (PDF)</a>
-<a class="btn ghost" href="./Poll%20dataset.xlsx" download="Project_Management_Playbook_Poll_Dataset.xlsx">Poll workbook (Excel)</a>
+      <div class="btns">
+        <a class="btn" href="https://mohityadavpm.github.io/TheProjectManagementPlaybook/Pm%20Playbook.pdf" target="_blank" rel="noopener">Full report (PDF) <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a class="btn ghost" href="https://docs.google.com/spreadsheets/d/1yBJ25uhN4IXc3x5bKwcxThSDrEbF1P3w" target="_blank" rel="noopener">Poll workbook <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
       </div>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="cite">Yadav, M. (2026). <em>The Project Management Playbook: 30 Common Pitfalls, 5,059 Poll Responses, and Practical Insights from Practice.</em> Independent Practitioner Research Report.</div>
+    <div class="cite panel">Yadav, M. (2026). <em>The Project Management Playbook: 30 Common Pitfalls, 5,059 Poll Responses, and Practical Insights from Practice.</em> Independent Practitioner Research Report.</div>
     <div class="byline">
       <div><strong>Mohit Yadav</strong> — Project Management · Agile Delivery · Business Analysis</div>
       <div>2026 Edition · © 2026 Mohit Yadav · Independent practitioner research, not affiliated with or endorsed by PMI<br>May be shared in full, unmodified, with attribution, for non-commercial use. Contact: <a href="mailto:bbmohit21@gmail.com">bbmohit21@gmail.com</a></div>
@@ -520,80 +483,78 @@
 
 <script>
 (function(){
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+
+  /* poll ticks */
   var tickrow = document.getElementById('tickrow');
-  if (tickrow) {
-    var hl = [10, 12, 15, 16, 17];
-    for (var i = 0; i < 27; i++) {
-      var t = document.createElement('span');
-      t.className = 'tick' + (hl.indexOf(i) > -1 ? ' hl' : '');
-      t.style.setProperty('--d', i);
-      tickrow.appendChild(t);
+  var hl = [10, 12, 15, 16, 17];
+  for (var i = 0; i < 27; i++) {
+    var t = document.createElement('span');
+    t.className = 'tick' + (hl.indexOf(i) > -1 ? ' hl' : '');
+    t.style.setProperty('--d', i);
+    tickrow.appendChild(t);
+  }
+
+  /* counters + rings */
+  var nodes = document.querySelectorAll('[data-target]');
+  function fmt(n, el){
+    var v = Math.round(n);
+    return (el.dataset.comma === '1' ? v.toLocaleString('en-US') : String(v)) + (el.dataset.suffix || '');
+  }
+  function paint(el, v){
+    if (el.classList.contains('ringstat')) {
+      el.querySelector('.ring-value').textContent = fmt(v, el);
+      el.querySelector('.ring-fg').style.strokeDasharray = v.toFixed(1) + ' 100';
+    } else {
+      el.textContent = fmt(v, el);
     }
   }
-
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var nodes = document.querySelectorAll('[data-target]');
-
-  function finalText(el){
-    var t = parseInt(el.dataset.target, 10);
-    var suffix = el.dataset.suffix || '';
-    return (el.dataset.comma === '1' ? t.toLocaleString('en-US') : String(t)) + suffix;
-  }
-
-  function ringOf(el){
-    var holder = el.closest ? el.closest('.ringstat') : null;
-    return holder ? holder.querySelector('.ring-fg') : null;
-  }
-
-  function setText(el){
-    var text = el.classList.contains('ring-value') ? finalText(el) : finalText(el);
-    el.textContent = text;
-  }
-
-  if (reduce || !('IntersectionObserver' in window)) {
-    nodes.forEach(function(el){
-      el.textContent = finalText(el);
-      var ring = ringOf(el);
-      if (ring) ring.setAttribute('stroke-dasharray', el.dataset.target + ' 100');
-    });
-    return;
-  }
-
   function animate(el){
-    var target = parseInt(el.dataset.target, 10);
-    var suffix = el.dataset.suffix || '';
-    var comma = el.dataset.comma === '1';
-    var ring = ringOf(el);
-    var duration = 900;
-    var start = null;
+    var target = parseInt(el.dataset.target, 10), start = null, dur = 900;
     function step(ts){
       if (!start) start = ts;
-      var p = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      var val = target * eased;
-      el.textContent = (comma ? Math.round(val).toLocaleString('en-US') : Math.round(val)) + suffix;
-      if (ring) ring.setAttribute('stroke-dasharray', val.toFixed(1) + ' 100');
-      if (p < 1) requestAnimationFrame(step);
-      else {
-        el.textContent = finalText(el);
-        if (ring) ring.setAttribute('stroke-dasharray', target + ' 100');
-      }
+      var p = Math.min((ts - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      paint(el, target * e);
+      if (p < 1) requestAnimationFrame(step); else paint(el, target);
     }
     requestAnimationFrame(step);
   }
+  if (reduce || !hasIO) {
+    nodes.forEach(function(el){ paint(el, parseInt(el.dataset.target, 10)); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { animate(en.target); io.unobserve(en.target); } });
+    }, { threshold: 0.4 });
+    nodes.forEach(function(el){ io.observe(el); });
+  }
 
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (entry.isIntersecting) {
-        animate(entry.target);
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
+  /* reveal on scroll */
+  var rv = document.querySelectorAll('.rv');
+  if (reduce || !hasIO) {
+    rv.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); ro.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    rv.forEach(function(el){ ro.observe(el); });
+  }
 
-  nodes.forEach(function(el){ io.observe(el); });
+  /* reading progress + active nav */
+  var bar = document.getElementById('progress');
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var secs = tabs.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(window.scrollY / h, 1) : 0) + ')';
+    var y = window.scrollY + 140, cur = -1;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= y) cur = i; });
+    tabs.forEach(function(a, i){ a.classList.toggle('active', i === cur); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
-
 </body>
 </html>
